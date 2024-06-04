@@ -1,0 +1,78 @@
+@import url('./variables.css');
+
+
+body{
+    background-color: var(--black);
+}
+
+img{
+    display: block;
+    margin-top: 48px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 32px;
+    height: 25.6px;
+}
+
+form{
+    background-color: var(--blue);
+    min-height: 365px; 
+    min-width: 327px;
+    max-width: 500px;
+    width:90%;
+    margin: 58.4px auto;
+    overflow: hidden;
+}
+
+fieldset{
+    border: 0;
+    margin-top:32px;
+    padding-top: 10px;
+    
+}
+legend{
+margin-left: 12px;
+}
+
+.formInput{
+    background-color: var(--blue);
+    border: none;
+    width: 90%;
+    margin: auto;
+    display: block;
+    border-bottom: 1px solid #5A698F;
+    margin-top: 24px;
+    padding-left: 16px;
+    padding-bottom: 18px;
+    color: white;
+    font-family: var(--font);
+    font-size: 15px;
+}
+
+input::placeholder{
+    font-family: var(--font);
+    font-size: 15px;
+    font-weight: 300;
+    
+}
+
+input:focus{
+    outline: none;
+}
+
+p{
+    text-align: center;
+    margin-top: -26px;
+    margin-bottom: 26px;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 430px) { 
+    form{
+        min-width: 400px;
+        min-width: 418px;
+    }
+}
