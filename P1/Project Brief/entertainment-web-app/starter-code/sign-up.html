@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/grammerhub_favicon-32x32.png">
-  
-  <title>Team YourTeamName | Entertainment web app</title>
-</head>
-<body>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/grammerhub_favicon-32x32.png"
+    />
 
-  Sign Up
-
-  Email address
-  Password
-  Repeat password
-
-  Create an account
-
-  Already have an account? Login
-  
-</body>
+    <title>Lakshya | Entertainment web app</title>
+    <link rel="stylesheet" href="./sign-up.css" />
+    <link rel="stylesheet" href="./common.css" />
+  </head>
+  <body>
+    <header><img src="./assets/logo.svg" alt="logo" /></header>
+    <main>
+      <form class="round" action="">
+        <fieldset>
+          <legend class="headingLarge">Sign Up</legend>
+          <input class= "formInput" type="email" placeholder="Email Address" required/>
+          <input class= "formInput" type="password" placeholder="Password" required/>
+          <input class="formInput" type="password" placeholder="Repeat Password" required/>
+          <input id = "button" class="round bodyMedium textWhite" type="submit" value="Create an account">
+        </fieldset>
+        <p class="textWhite bodyMedium">Already have an account?<a class="textRed textNoDecoration" href="./login.html"> Login</a></p>
+      </form>
+    </main>
+  </body>
 </html>

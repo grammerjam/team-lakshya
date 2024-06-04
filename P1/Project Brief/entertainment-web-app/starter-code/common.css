@@ -1,0 +1,53 @@
+@import url('./variables.css');
+
+.round{
+    border-radius: var(--roundness);
+}
+
+.headingLarge{
+    font-family: var(--font);
+    color: white;
+    font-weight: 300;
+    font-size: 32px;
+    letter-spacing: -0.5px;
+    line-height: auto;
+}
+
+.bodyMedium{
+    font-family: var(--font);
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.textWhite{
+    color: var(--white);
+}
+.textBlack{
+    color: var(--black);
+}
+.textRed{
+    color:var(--red)
+}
+
+.textNoDecoration{
+    text-decoration: none;
+}
+
+input[type="submit"]{
+    background-color: var(--red);
+    height: 48px;
+    width: 90%;
+    min-width: 279px;
+    margin: 40px auto;
+    display: block;
+    border: none;
+    cursor: pointer;
+}
+input[type="submit"]:active{
+    transform: scale(0.98);
+}
+
+input[type="submit"]:hover{
+    background-color: var(--white);
+    color: var(--black);
+}
