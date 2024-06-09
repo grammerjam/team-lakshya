@@ -1,3 +1,4 @@
+// Select elements
 const loginForm = document.querySelector('form');
 const emailInput = document.querySelector('input[type="email"]');
 const passwordInput = document.querySelector('input[type="password"]');
@@ -56,7 +57,7 @@ const displayError = (inputElement, message) => {
     const errorDisplay = document.createElement("div");
     errorDisplay.classList.add("error-message");
     errorDisplay.textContent = message;
-    inputElement.parentNode.insertBefore(errorDisplay, inputElement.nextSibling);
+    inputElement.parentNode.insertBefore(errorDisplay, inputElement); // Insert before the input element
     inputElement.classList.add("error");
 }
 
@@ -84,6 +85,7 @@ const style = document.createElement("style");
 style.innerHTML = `
     .error {
         border-color: red;
+        margin-top: 1px;
     }
 
     .error-message {
@@ -91,7 +93,6 @@ style.innerHTML = `
         font-weight: 300;
         font-size: 13px;
         line-height: 1.5;
-        margin-top: 5px;
         width: auto;
         text-align: end;
         padding: inherit;
