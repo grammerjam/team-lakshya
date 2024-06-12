@@ -3,7 +3,10 @@
 .round{
     border-radius: var(--roundness);
 }
-
+body{
+ 
+    background-color: var(--black)
+}
 .headingLarge{
     font-family: var(--font);
     color: white;
@@ -28,9 +31,15 @@
 .textRed{
     color:var(--red)
 }
-
+.textBlue{
+    color: var(--blue)
+}
 .textNoDecoration{
     text-decoration: none;
+}
+
+.textCenter{
+    text-align: center;
 }
 
 input[type="submit"]{
@@ -50,4 +59,72 @@ input[type="submit"]:active{
 input[type="submit"]:hover{
     background-color: var(--white);
     color: var(--black);
+}
+
+/* style the header */
+/* for mobile */
+.navigation{
+ height: 56px;
+    width: 100%;
+    background-color: var(--blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+.logo{
+    width: 25px;
+    height: 20px;
+}
+.user{
+    width:24px;
+    height: 24px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+nav{
+    width: 133.54px;
+    display: flex;
+    justify-content: space-between;
+}
+.nav-icon{
+    transform: scale(0.80);
+}
+.nav-icon:hover path {
+    fill: #ffffff; 
+    transition: fill 0.1s;
+
+}
+
+@media screen and (min-width: 430px){
+    .navigation{
+        width: auto;
+        margin: 24px;
+        border-radius: var(--roundness);
+    }
+}
+
+@media screen and (min-width: 768px){
+    .navigation{
+        position: absolute;
+        top: 0px;
+        width: 56px;
+        height: 90vh;
+        flex-direction: column;
+        margin: 24px;
+        border-radius: var(--roundness);
+        padding: 16px;
+    }
+    nav{
+        width:auto;
+        height:400px; 
+        flex-direction: column;
+    }
+    nav::after{
+        content: "";
+        height: 200px;
+    }
 }
