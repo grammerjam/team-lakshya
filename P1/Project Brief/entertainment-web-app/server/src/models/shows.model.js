@@ -81,10 +81,12 @@ const showSchema = new Schema(
 		duration: {
 			type: Number,
 		},
-		episodes: {
-			type: Schema.Types.ObjectId,
-			ref: 'Episode',
-		},
+		episodes: [
+			{
+				type: Schema.Types.ObjectId,
+				ref: 'Episode',
+			},
+		],
 	},
 	{ timestamps: true }
 );
