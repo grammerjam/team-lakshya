@@ -1,15 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
+import Media from './media.model';
 
-const mediaSchema = new Schema({
-	show: {
-		type: mongoose.Schema.Types.ObjectId,
-		ref: 'Shows',
-	},
-	movie: {
-		type: mongoose.Schema.Types.ObjectId,
-		ref: 'Movie',
-	},
-});
 const UserSchema = new Schema(
 	{
 		username: {
@@ -37,7 +28,7 @@ const UserSchema = new Schema(
 			},
 		],
 		watchList: {
-			type: [mediaSchema],
+			type: [Media],
 		},
 		avatar: {
 			type: String,
