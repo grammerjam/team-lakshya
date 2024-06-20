@@ -1,6 +1,11 @@
 import mongoose, { Schema } from 'mongoose';
 
 const likeSchema = new Schema( {
+    review : {
+        type : Schema.Types.ObjectId ,
+        ref : "Review"
+
+    },
     comment : {
         type : Schema.Types.ObjectId ,
         ref : "Comment" ,
