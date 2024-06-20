@@ -67,7 +67,10 @@ const movieSchema = new Schema({
             type : Schema.Types.ObjectId ,
             ref : "Comment"
         }
-    ]
+    ] , 
+    duration : {
+        type : Number, 
+    }
 } , { timestamps : true } ) ;
 
 export const Movie = mongoose.model('Movie' , movieSchema ) ; 
