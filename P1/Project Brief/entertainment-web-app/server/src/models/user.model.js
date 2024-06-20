@@ -1,5 +1,4 @@
 import mongoose, { Schema } from 'mongoose';
-import Media from './media.model';
 
 const UserSchema = new Schema(
 	{
@@ -18,18 +17,24 @@ const UserSchema = new Schema(
 			required: true,
 			unique: true,
 		},
-		watchHistory: {
-			type: [mediaSchema],
-		},
+		watchHistory: [
+			{
+				type: Schema.Types.ObjectId,
+				ref: 'Media',
+			},
+		],
 		subscriptions: [
 			{
 				type: mongoose.Schema.Types.ObjectId,
 				ref: 'Subscription',
 			},
 		],
-		watchList: {
-			type: [Media],
-		},
+		watchList: [
+			{
+				type: Schema.Types.ObjectId,
+				ref: 'Media',
+			},
+		],
 		avatar: {
 			type: String,
 		},
