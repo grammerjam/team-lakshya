@@ -58,12 +58,10 @@ const showSchema = new Schema(
 			required: true,
 		},
 		audioLanguages: {
-			type: String,
-			enum: ['English', 'Hindi', 'Bengali', 'Maithli'],
+			type: [String],
 		},
 		subtitles: {
-			type: String,
-			enum: ['English', 'Hindi', 'French', 'Tamil'],
+			type: [String],
 		},
 		contentAdvisory: {
 			type: [String],
