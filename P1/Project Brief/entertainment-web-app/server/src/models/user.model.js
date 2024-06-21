@@ -8,9 +8,19 @@ const UserSchema = new Schema(
 			unique: true,
 			index: true,
 			lowercase: true,
+			trim : true ,
+		},
+		email : {
+			type : String ,
+			required : true ,
+			lowercase : true ,
+			trim : true ,
+			unique : true  
 		},
 		fullName: {
 			type: String,
+			trim : true ,
+			index : true ,
 		},
 		password: {
 			type: String,
