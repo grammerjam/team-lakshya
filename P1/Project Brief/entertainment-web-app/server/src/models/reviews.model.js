@@ -8,6 +8,10 @@ const reviewSchema = new Schema( {
     } ,
     content : {
         type : String ,
+    },
+    media : {
+        type : Schema.Types.ObjectId ,
+        ref : "Media"
     }
 } , { timestamps : true } ) ; 
 
