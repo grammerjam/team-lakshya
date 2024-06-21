@@ -1,1 +1,12 @@
 # API definition 
+
+api/v1/users/register
+    method : POST
+    protocol : HTTP 
+    response : Json
+
+api/v1/users/login 
+    method : GET
+    protocol : HTTP
+    response : Boolean
+
