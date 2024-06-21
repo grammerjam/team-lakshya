@@ -11,8 +11,8 @@ const movieSchema = new Schema({
         required : true ,
     } ,
     genre : {
-        type : String ,
-        enum : [ "Horror" , "Sports" , "Medical" , "Crime" , "Thriller" , "Pyschological" ] 
+        type : [String] ,
+        required : true 
     } ,
     director : {
         type : String ,
@@ -28,6 +28,7 @@ const movieSchema = new Schema({
     },
     artists : {
         type : [ String ] ,
+        required : true ,
     } ,
     videoFile : {
         type : String ,
@@ -36,6 +37,7 @@ const movieSchema = new Schema({
     rated : {
         type : String ,
         enum : [ "U" , "A" , "R" ] ,
+        rqeuired : true ,
     } ,
     reviews : [
         {
@@ -48,15 +50,16 @@ const movieSchema = new Schema({
         required : true ,
     } ,
     audioLanguages : {
-        type : String ,
-        enum : [ "English" , "Hindi" , "Bengali" , "Maithli" ] 
+        type : [String] ,
+        required : true ,
     } ,
     subtitles : {
-        type : String , 
-        enum : [ "English" , "Hindi" , "French" , "Tamil" ] 
+        type : [String] ,
+        required : true ,
     } ,
     contentAdvisory : {
-        type : [ String ] 
+        type : [ String ] ,
+        required : true ,
     } ,
     likes : {
         type : Schema.Types.ObjectId ,
@@ -70,6 +73,7 @@ const movieSchema = new Schema({
     ] , 
     duration : {
         type : Number, 
+        required : true ,
     }
 } , { timestamps : true } ) ;
 
