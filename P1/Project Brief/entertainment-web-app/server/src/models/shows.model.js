@@ -12,15 +12,7 @@ const showSchema = new Schema(
 			required: true,
 		},
 		genre: {
-			type: String,
-			enum: [
-				'Horror',
-				'Sports',
-				'Medical',
-				'Crime',
-				'Thriller',
-				'Pyschological',
-			],
+			type: [String],
 		},
 		director: {
 			type: String,
