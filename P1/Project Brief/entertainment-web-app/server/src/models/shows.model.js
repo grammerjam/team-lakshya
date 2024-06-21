@@ -13,6 +13,7 @@ const showSchema = new Schema(
 		},
 		genre: {
 			type: [String],
+			required : true 
 		},
 		director: {
 			type: String,
@@ -28,6 +29,7 @@ const showSchema = new Schema(
 		},
 		artists: {
 			type: [String],
+			required : true 
 		},
 		videoFiles: [
 			{
@@ -38,6 +40,7 @@ const showSchema = new Schema(
 		rated: {
 			type: String,
 			enum: ['U', 'A', 'R'],
+			required : true ,
 		},
 		reviews: [
 			{
@@ -51,12 +54,15 @@ const showSchema = new Schema(
 		},
 		audioLanguages: {
 			type: [String],
+			required : true ,
 		},
 		subtitles: {
 			type: [String],
+			required : true ,
 		},
 		contentAdvisory: {
 			type: [String],
+			required : true ,
 		},
 		likes: {
 			type: Schema.Types.ObjectId,
@@ -70,6 +76,7 @@ const showSchema = new Schema(
 		],
 		duration: {
 			type: Number,
+			required : true ,
 		},
 		episodes: [
 			{
