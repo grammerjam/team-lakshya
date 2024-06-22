@@ -35,6 +35,7 @@ The `Movie` collection stores movies on our platform.
 - **artists**([String], Required)
 - **genre**([String], Required) 
 - **studio**(String, Required) 
+- **thumbnail**(String, Required) 
 - **audioLanguages**([String], Required) : Language of the film.
 - **subtitles** ([String], Required) : Array of languages in which subtitles are available.
 - **contentAdvisory**(String, Required)
