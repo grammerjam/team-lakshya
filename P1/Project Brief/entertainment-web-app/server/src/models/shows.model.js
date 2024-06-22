@@ -31,12 +31,6 @@ const showSchema = new Schema(
 			type: [String],
 			required : true 
 		},
-		videoFiles: [
-			{
-				type: String,
-				required: true,
-			},
-		],
 		rated: {
 			type: String,
 			enum: ['U', 'A', 'R'],

@@ -1,6 +1,14 @@
 import mongoose , { Schema } from 'mongoose' ;
 
 const episodeSchema = new Schema( {
+    videoFile : {
+        type : String ,
+        required : true ,
+    } ,
+    thumbnail : {
+        type : String ,
+        required : true ,
+    },
     name : {
         type : String ,
         required : true ,

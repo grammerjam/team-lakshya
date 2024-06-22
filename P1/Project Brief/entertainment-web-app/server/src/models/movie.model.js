@@ -34,6 +34,10 @@ const movieSchema = new Schema({
         type : String ,
         required : true ,
     } ,
+    thumbnail : {
+        type : String ,
+        required : true ,
+    },
     rated : {
         type : String ,
         enum : [ "U" , "A" , "R" ] ,
