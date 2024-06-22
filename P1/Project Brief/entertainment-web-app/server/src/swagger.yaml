@@ -96,6 +96,7 @@ components:
             write:pets: modify user data or media data 
             read:pets: read user data or media data
 
+# User login
 /login:
   get:
     description: Returns user based on ID
@@ -127,7 +128,7 @@ components:
       type: string 
   style: simple
 
-  
+# User register
 /register:
   post:
     description: Stores user data
@@ -159,7 +160,7 @@ components:
       type: string 
   style: simple 
 
-
+# Get Movies data
 /movies:
   get:
     description: Returns movies based on ID
@@ -191,6 +192,7 @@ components:
       type: string 
   style: simple
 
+# Get shows data
 /shows:
   get:
     description: Returns shows based on ID
@@ -222,6 +224,7 @@ components:
       type: string 
   style: simple 
 
+# Get trending movies and shows
 /trending:
   get:
     description: Returns trending media
@@ -251,7 +254,73 @@ components:
       type: array
       items:
       type: string 
-  style: simple
+  style: simple 
+
+# Post a movie 
+/post/movie:
+  post:
+    description: Stores movie data
+    summary: Posts movie data
+    operationId: postMovieById
+    responses:
+        '200':
+        description: shows response
+        content:
+            '*/*' :
+            schema:
+                type: string
+                items:
+                $ref: '#/components/schemas/Show'
+        default:
+        description: error payload
+        content:
+            'text/html':
+            schema:
+                $ref: '#/components/schemas/ErrorModel'
+  parameters:
+  - name: id
+  in: path
+  description: ID of movie to use
+  required: true
+  schema:
+      type: array
+      items:
+      type: string 
+  style: simple 
+
+# Post a show
+/post/show:
+  post:
+    description: Stores show data
+    summary: Posts show data
+    operationId: postShowById
+    responses:
+        '200':
+        description: shows response
+        content:
+            '*/*' :
+            schema:
+                type: string
+                items:
+                $ref: '#/components/schemas/Show'
+        default:
+        description: error payload
+        content:
+            'text/html':
+            schema:
+                $ref: '#/components/schemas/ErrorModel'
+  parameters:
+  - name: id
+  in: path
+  description: ID of show to use
+  required: true
+  schema:
+      type: array
+      items:
+      type: string 
+  style: simple 
+
+ 
 
   
 
