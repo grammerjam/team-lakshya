@@ -11,4 +11,15 @@ const registerUser = async ( req , res ) => {
 
 };
 
-export { registerUser };
+const getUser = async ( req , res ) => {
+    // login logic  
+    try {
+        const { username , email , password } = req.body ;
+        
+    } catch( error ) {
+
+    }
+
+};
+
+export { registerUser , getUser } ;
