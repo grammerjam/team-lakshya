@@ -1,0 +1,25 @@
+#### Initial setup 
+
+- Run the following command
+```shell 
+npm install
+``` 
+- Create a .env file.
+- Add environment variables in your .env file
+```
+PORT = PORT_NUMBER
+MONGODB_URI = YOUR_MONGODB_URI
+
+CORS_ORIGIN= "*"
+
+ACCESS_TOKEN_SECRET = YOUR_ACCESS_TOKEN_SECRET
+ACCESS_TOKEN_EXPIRY = "1d
+REFRESH_TOKEN_SECRET= YOUR_REFRESH_TOKEN_SECRET
+REFRESH_TOKEN_EXPIRY = "10d"
+
+# we use cloudinary to store images and videos
+CLOUDINARY_CLOUD_NAME = YOUR_COULDINARY_CLOUD_NAME
+CLOUDINARY_API_KEY = YOUR_CLOUDINARY_API_KEY
+CLOUDINARY_API_SECRET = CLOUDINARY_API_SECRET
+```
+
