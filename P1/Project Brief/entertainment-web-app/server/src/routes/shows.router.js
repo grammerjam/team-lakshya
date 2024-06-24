@@ -11,3 +11,5 @@ router.route('/shows').get(
 router.route('/post/shows').post( 
     postShow
 );
+
+export default router ;
