@@ -1,0 +1,327 @@
+# API definition 
+
+title: Entertainment Web App
+summary: An OTT App
+description: This is a sample server for Entertainment Web App (Lakshya-entertainment)
+termsOfService: https://example.com/terms/
+contact:
+  name: API Support
+  url: https://www.example.com/support
+  email: support@example.com
+license:
+  name: Apache 2.0
+  url: https://www.apache.org/licenses/LICENSE-2.0.html
+version: 1.0.0
+servers:
+- url: https://{username}.render-server.com:{port}/{basePath}
+  description: The production API server
+  variables:
+    username:
+      # note! no enum here means it is an open value
+      default: demo
+      description: this value is assigned by the service provider, in this example `render-server.com`
+    port:
+      enum:
+        - '8000'
+        - '5000'
+      default: '8000'
+    basePath:
+      # open meaning there is the opportunity to use special base paths as assigned by the provider, default is `v1`
+      default: v1
+components:
+  schemas:
+    GeneralError:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+    Category:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+    Tag:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+  parameters:
+    skipParam:
+      name: skip
+      in: query
+      description: number of items to skip
+      required: true
+      schema:
+        type: integer
+        format: int32
+    limitParam:
+      name: limit
+      in: query
+      description: max records to return
+      required: true
+      schema:
+        type: integer
+        format: int32
+  responses:
+    NotFound:
+      description: Entity not found.
+    IllegalInput:
+      description: Illegal input for operation.
+    GeneralError:
+      description: General Error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/GeneralError'
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: api_key
+      in: header
+    petstore_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://example.org/api/oauth/dialog
+          scopes:
+            write:pets: modify user data or media data 
+            read:pets: read user data or media data
+
+# User login
+/login:
+  get:
+    description: Returns user based on ID
+    summary: Find user by ID
+    operationId: getUserById
+    responses:
+        '200':
+        description: user response
+        content:
+            '*/*' :
+            schema:
+                type: array
+                items:
+                $ref: '#/components/schemas/User'
+        default:
+        description: error payload
+        content:
+            'text/html':
+            schema:
+                $ref: '#/components/schemas/ErrorModel'
+  parameters:
+  - name: id
+  in: path
+  description: ID of user to use
+  required: true
+  schema:
+      type: array
+      items:
+      type: string 
+  style: simple
+
+# User register
+/register:
+  post:
+    description: Stores user data
+    summary: Registers user
+    operationId: postUserById
+    responses:
+        '200':
+        description: user response
+        content:
+            '*/*' :
+            schema:
+                type: boolean
+                items:
+                $ref: '#/components/schemas/User'
+        default:
+        description: error payload
+        content:
+            'text/html':
+            schema:
+                $ref: '#/components/schemas/ErrorModel'
+  parameters:
+  - name: id
+  in: path
+  description: ID of user to use
+  required: true
+  schema:
+      type: array
+      items:
+      type: string 
+  style: simple 
+
+# Get Movies data
+/movies:
+  get:
+    description: Returns movies based on ID
+    summary: Find movies by ID
+    operationId: getMovieById
+    responses:
+        '200':
+        description: movies response
+        content:
+            '*/*' :
+            schema:
+                type: array
+                items:
+                $ref: '#/components/schemas/Movie'
+        default:
+        description: error payload
+        content:
+            'text/html':
+            schema:
+                $ref: '#/components/schemas/ErrorModel'
+  parameters:
+  - name: id
+  in: path
+  description: ID of movies to use
+  required: true
+  schema:
+      type: array
+      items:
+      type: string 
+  style: simple
+
+# Get shows data
+/shows:
+  get:
+    description: Returns shows based on ID
+    summary: Find shows by ID
+    operationId: getShowsById
+    responses:
+        '200':
+        description: shows response
+        content:
+            '*/*' :
+            schema:
+                type: array
+                items:
+                $ref: '#/components/schemas/Show'
+        default:
+        description: error payload
+        content:
+            'text/html':
+            schema:
+                $ref: '#/components/schemas/ErrorModel'
+  parameters:
+  - name: id
+  in: path
+  description: ID of shows to use
+  required: true
+  schema:
+      type: array
+      items:
+      type: string 
+  style: simple 
+
+# Get trending movies and shows
+/trending:
+  get:
+    description: Returns trending media
+    summary: Find trending movies and shows
+    operationId: getMediaById
+    responses:
+        '200':
+        description: media response
+        content:
+            '*/*' :
+            schema:
+                type: array
+                items:
+                $ref: '#/components/schemas/Media'
+        default:
+        description: error payload
+        content:
+            'text/html':
+            schema:
+                $ref: '#/components/schemas/ErrorModel'
+  parameters:
+  - name: id
+  in: path
+  description: ID of movie or show to use
+  required: true
+  schema:
+      type: array
+      items:
+      type: string 
+  style: simple 
+
+# Post a movie 
+/post/movie:
+  post:
+    description: Stores movie data
+    summary: Posts movie data
+    operationId: postMovieById
+    responses:
+        '200':
+        description: shows response
+        content:
+            '*/*' :
+            schema:
+                type: string
+                items:
+                $ref: '#/components/schemas/Show'
+        default:
+        description: error payload
+        content:
+            'text/html':
+            schema:
+                $ref: '#/components/schemas/ErrorModel'
+  parameters:
+  - name: id
+  in: path
+  description: ID of movie to use
+  required: true
+  schema:
+      type: array
+      items:
+      type: string 
+  style: simple 
+
+# Post a show
+/post/show:
+  post:
+    description: Stores show data
+    summary: Posts show data
+    operationId: postShowById
+    responses:
+        '200':
+        description: shows response
+        content:
+            '*/*' :
+            schema:
+                type: string
+                items:
+                $ref: '#/components/schemas/Show'
+        default:
+        description: error payload
+        content:
+            'text/html':
+            schema:
+                $ref: '#/components/schemas/ErrorModel'
+  parameters:
+  - name: id
+  in: path
+  description: ID of show to use
+  required: true
+  schema:
+      type: array
+      items:
+      type: string 
+  style: simple 
+
+ 
+
+  
+
+  
