@@ -78,6 +78,14 @@ const showSchema = new Schema(
 				ref: 'Episode',
 			},
 		],
+		isTrending: {
+			type: Boolean,
+			required: true,
+		},
+		isBookmarked: {
+			type: Boolean,
+			required: true,
+		},
 	},
 	{ timestamps: true }
 );
